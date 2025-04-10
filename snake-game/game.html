@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Play</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .game-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+        canvas {
+            background-color: #1a1a1a;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="game-font text-green-500 text-xl">Snake Game</a>
+            <div class="space-x-6">
+                <a href="game.html" class="hover:text-green-500 transition-colors">Play Game</a>
+                <a href="instructions.html" class="hover:text-green-500 transition-colors">Instructions</a>
+                <a href="highscores.html" class="hover:text-green-500 transition-colors">High Scores</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Container -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Game Canvas and Controls -->
+            <div class="text-center mb-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg inline-block">
+                    <canvas id="gameCanvas" width="400" height="400" class="border-4 border-green-500 rounded"></canvas>
+                    <div class="mt-4 space-y-4">
+                        <div id="score" class="game-font text-2xl text-green-500">Score: 0</div>
+                        <button id="startButton" class="game-font bg-green-500 text-black px-6 py-3 rounded hover:bg-green-400 transition-colors">
+                            Start Game
+                        </button>
+                        <div class="mt-4">
+                            <label class="game-font text-sm block mb-2">Difficulty:</label>
+                            <select id="difficulty" class="bg-gray-700 text-white px-4 py-2 rounded">
+                                <option value="easy">Easy</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+        <div class="bg-gray-800 p-8 rounded-lg text-center">
+            <h2 class="game-font text-3xl text-red-500 mb-4">Game Over!</h2>
+            <p class="game-font text-xl mb-4">Final Score: <span id="finalScore">0</span></p>
+            <button id="restartButton" class="game-font bg-green-500 text-black px-6 py-3 rounded hover:bg-green-400 transition-colors">
+                Play Again
+            </button>
+        </div>
+    </div>
+
+    <script src="scripts/game.js"></script>
+</body>
+</html>
