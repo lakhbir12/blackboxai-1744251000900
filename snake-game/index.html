@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Welcome</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .game-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="game-font text-green-500 text-xl">Snake Game</a>
+            <div class="space-x-6">
+                <a href="game.html" class="hover:text-green-500 transition-colors">Play Game</a>
+                <a href="instructions.html" class="hover:text-green-500 transition-colors">Instructions</a>
+                <a href="highscores.html" class="hover:text-green-500 transition-colors">High Scores</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-4 py-16">
+        <div class="text-center">
+            <h1 class="game-font text-5xl mb-8 text-green-500">Snake Game</h1>
+            <p class="text-xl mb-12 text-gray-300">Experience the classic snake game with a modern twist!</p>
+            
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <i class="fas fa-gamepad text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl mb-2">Simple Controls</h3>
+                    <p class="text-gray-400">Use arrow keys to guide your snake</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <i class="fas fa-trophy text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl mb-2">High Scores</h3>
+                    <p class="text-gray-400">Compete for the top spot</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <i class="fas fa-mobile-alt text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl mb-2">Responsive Design</h3>
+                    <p class="text-gray-400">Play on any device</p>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="game.html" class="game-font inline-block bg-green-500 text-black px-8 py-4 rounded-lg text-xl hover:bg-green-400 transition-colors transform hover:scale-105">
+                Play Now <i class="fas fa-play ml-2"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-center p-4 mt-16">
+        <p class="text-gray-400">&copy; 2024 Snake Game. All rights reserved.</p>
+    </footer>
+</body>
+</html>
