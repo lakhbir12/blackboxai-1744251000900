@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Instructions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .game-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="game-font text-green-500 text-xl">Snake Game</a>
+            <div class="space-x-6">
+                <a href="game.html" class="hover:text-green-500 transition-colors">Play Game</a>
+                <a href="instructions.html" class="hover:text-green-500 transition-colors">Instructions</a>
+                <a href="highscores.html" class="hover:text-green-500 transition-colors">High Scores</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Instructions Content -->
+    <main class="container mx-auto px-4 py-16">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="game-font text-4xl text-green-500 mb-12 text-center">How to Play</h1>
+
+            <!-- Game Objective -->
+            <div class="bg-gray-800 rounded-lg p-8 mb-8 shadow-lg">
+                <h2 class="game-font text-2xl mb-4 text-green-400">
+                    <i class="fas fa-bullseye mr-3"></i>Game Objective
+                </h2>
+                <p class="text-gray-300 leading-relaxed">
+                    Guide your snake to eat the red food dots to grow longer. The more food you eat, the higher your score! 
+                    But be careful - if you hit the walls or your own tail, it's game over!
+                </p>
+            </div>
+
+            <!-- Controls -->
+            <div class="bg-gray-800 rounded-lg p-8 mb-8 shadow-lg">
+                <h2 class="game-font text-2xl mb-4 text-green-400">
+                    <i class="fas fa-keyboard mr-3"></i>Controls
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-700 p-4 rounded">
+                        <h3 class="text-xl mb-3">Movement</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><span class="text-green-500">↑</span> Up Arrow - Move Up</li>
+                            <li><span class="text-green-500">↓</span> Down Arrow - Move Down</li>
+                            <li><span class="text-green-500">←</span> Left Arrow - Move Left</li>
+                            <li><span class="text-green-500">→</span> Right Arrow - Move Right</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded">
+                        <h3 class="text-xl mb-3">Special Controls</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><span class="text-green-500">Space</span> - Pause/Resume Game</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scoring -->
+            <div class="bg-gray-800 rounded-lg p-8 mb-8 shadow-lg">
+                <h2 class="game-font text-2xl mb-4 text-green-400">
+                    <i class="fas fa-star mr-3"></i>Scoring
+                </h2>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Each food item eaten: <span class="text-green-500">10 points</span></li>
+                    <li>High scores are automatically saved</li>
+                    <li>Try to beat your personal best!</li>
+                </ul>
+            </div>
+
+            <!-- Tips & Strategies -->
+            <div class="bg-gray-800 rounded-lg p-8 mb-8 shadow-lg">
+                <h2 class="game-font text-2xl mb-4 text-green-400">
+                    <i class="fas fa-lightbulb mr-3"></i>Tips & Strategies
+                </h2>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Plan your route ahead to avoid getting trapped</li>
+                    <li>Use the entire game area to maximize your movement options</li>
+                    <li>Start with easy difficulty to practice your skills</li>
+                    <li>Watch out for your growing tail as you eat more food</li>
+                </ul>
+            </div>
+
+            <!-- Start Playing Button -->
+            <div class="text-center mt-12">
+                <a href="game.html" class="game-font inline-block bg-green-500 text-black px-8 py-4 rounded-lg text-xl hover:bg-green-400 transition-colors transform hover:scale-105">
+                    Start Playing <i class="fas fa-play ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-center p-4 mt-16">
+        <p class="text-gray-400">&copy; 2024 Snake Game. All rights reserved.</p>
+    </footer>
+</body>
+</html>
