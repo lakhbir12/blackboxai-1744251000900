@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - High Scores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .game-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="game-font text-green-500 text-xl">Snake Game</a>
+            <div class="space-x-6">
+                <a href="game.html" class="hover:text-green-500 transition-colors">Play Game</a>
+                <a href="instructions.html" class="hover:text-green-500 transition-colors">Instructions</a>
+                <a href="highscores.html" class="hover:text-green-500 transition-colors">High Scores</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- High Scores Content -->
+    <main class="container mx-auto px-4 py-16">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="game-font text-4xl text-green-500 mb-12 text-center">High Scores</h1>
+
+            <!-- High Scores Table -->
+            <div class="bg-gray-800 rounded-lg p-8 shadow-lg">
+                <div class="overflow-x-auto">
+                    <table class="w-full" id="highScoresTable">
+                        <thead>
+                            <tr class="text-left border-b-2 border-gray-600">
+                                <th class="game-font py-4 px-6 text-green-400">Rank</th>
+                                <th class="game-font py-4 px-6 text-green-400">Score</th>
+                                <th class="game-font py-4 px-6 text-green-400">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="highScoresBody">
+                            <!-- Scores will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- No Scores Message -->
+                <div id="noScores" class="text-center py-8 hidden">
+                    <p class="game-font text-gray-400">No high scores yet. Start playing to set some records!</p>
+                </div>
+            </div>
+
+            <!-- Play Game Button -->
+            <div class="text-center mt-12">
+                <a href="game.html" class="game-font inline-block bg-green-500 text-black px-8 py-4 rounded-lg text-xl hover:bg-green-400 transition-colors transform hover:scale-105">
+                    Play Now <i class="fas fa-play ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-center p-4 mt-16">
+        <p class="text-gray-400">&copy; 2024 Snake Game. All rights reserved.</p>
+    </footer>
+
+    <!-- High Scores JavaScript -->
+    <script>
+        // Function to format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString();
+        }
+
+        // Function to load and display high scores
+        function loadHighScores() {
+            try {
+                const highScores = JSON.parse(localStorage.getItem('snakeHighScores')) || [];
+                const tbody = document.getElementById('highScoresBody');
+                const noScores = document.getElementById('noScores');
+
+                if (highScores.length === 0) {
+                    tbody.innerHTML = '';
+                    noScores.classList.remove('hidden');
+                    return;
+                }
+
+                noScores.classList.add('hidden');
+                tbody.innerHTML = highScores
+                    .map((score, index) => `
+                        <tr class="border-b border-gray-700 hover:bg-gray-700 transition-colors">
+                            <td class="py-4 px-6 game-font text-green-500">#${index + 1}</td>
+                            <td class="py-4 px-6">${score.score}</td>
+                            <td class="py-4 px-6">${formatDate(score.date)}</td>
+                        </tr>
+                    `)
+                    .join('');
+            } catch (error) {
+                console.error('Error loading high scores:', error);
+                document.getElementById('noScores').classList.remove('hidden');
+            }
+        }
+
+        // Load high scores when page loads
+        document.addEventListener('DOMContentLoaded', loadHighScores);
+    </script>
+</body>
+</html>
